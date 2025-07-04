@@ -1,0 +1,41 @@
+name: 'Send Webhook'
+description: '通过 Python 脚本发送自定义 webhook（支持飞书卡片）'
+author: '你的名字'
+inputs:
+  url:
+    description: 'Webhook 地址'
+    required: true
+  bot:
+    description: '机器人类型（如 feishu）'
+    required: false
+    default: 'feishu'
+  title:
+    description: '标题'
+    required: true
+  subtitle:
+    description: '副标题'
+    required: false
+    default: ''
+  payload:
+    description: '内容'
+    required: true
+  msg_type:
+    description: '类型 info|success|warning|error'
+    required: false
+    default: 'info'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '--url'
+    - '${{ inputs.url }}'
+    - '--bot'
+    - '${{ inputs.bot }}'
+    - '--title'
+    - '${{ inputs.title }}'
+    - '--subtitle'
+    - '${{ inputs.subtitle }}'
+    - '--payload'
+    - '${{ inputs.payload }}'
+    - '--msg_type'
+    - '${{ inputs.msg_type }}' 
