@@ -1,6 +1,6 @@
 name: 'Send Webhook'
 description: '通过 Python 脚本发送自定义 webhook（支持飞书卡片）'
-author: '你的名字'
+author: 'ChenYB0'
 inputs:
   url:
     description: 'Webhook 地址'
@@ -39,3 +39,6 @@ runs:
     - '${{ inputs.payload }}'
     - '--msg_type'
     - '${{ inputs.msg_type }}' 
+branding:
+  icon: refresh-cw
+  color: green
