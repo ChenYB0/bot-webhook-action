@@ -6,7 +6,7 @@
 
 ```yaml
 - name: 发送飞书Webhook
-  uses: ./  # 或者你的仓库名@分支
+  uses: bot-webhook-action@v1  # 或者你的仓库名@分支
   with:
     url: ${{ secrets.FEISHU_WEBHOOK_URL }}
     bot: feishu
