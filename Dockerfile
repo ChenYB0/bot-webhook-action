@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY send_webhook.py .
 
-ENTRYPOINT ["python", "send_webhook.py"] 
+ENTRYPOINT ["python", "/app/send_webhook.py"] 
