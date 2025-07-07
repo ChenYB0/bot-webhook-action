@@ -4,6 +4,4 @@ WORKDIR /app
 
 COPY send_webhook.py .
 
-RUN pip install requests
-
 ENTRYPOINT ["python", "send_webhook.py"] 
