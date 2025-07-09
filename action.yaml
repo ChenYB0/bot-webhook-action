@@ -2,6 +2,10 @@ name: 'Send Webhook'
 description: '通过 Python 脚本发送自定义 webhook（支持飞书卡片）'
 author: 'ChenYB0'
 inputs:
+  base_image:
+    description: 'Docker base image（可选，默认为 python:3.9-slim）'
+    required: false
+    default: 'python:3.9-slim'
   url:
     description: 'Webhook 地址'
     required: true
@@ -26,6 +30,8 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  build-args:
+    BASE_IMAGE: ${{ inputs.base_image }}
   args:
     - '--url'
     - '${{ inputs.url }}'
